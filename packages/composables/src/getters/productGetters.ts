@@ -4,11 +4,13 @@ import {
   AgnosticPrice,
   ProductGetters
 } from '@vue-storefront/core';
-import type { Product, ProductFilter } from '@vue-storefront/<% INTEGRATION %>-api';
+import type { Product, ProductFilter } from '@vue-storefront/propelvsf-api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getName(product: Product): string {
-  return 'Name';
+  console.log('product in product getters', product);
+
+  return 'Name 1111';
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

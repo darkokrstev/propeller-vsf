@@ -1,8 +1,12 @@
 module.exports = {
   integrations: {
-    <% INTEGRATION %>: {
-      location: '@vue-storefront/<% INTEGRATION %>-api/server',
-      configuration: {}
+    propelvsf: {
+      location: '@vue-storefront/propelvsf-api/server',
+      configuration: {
+        api: {
+          url: '' //https://api.helice.cloud/dev/graphql
+        }
+      }
     }
   }
 };
