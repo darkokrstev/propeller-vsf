@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 import { apiClientFactory } from '@vue-storefront/core';
 import type { Setttings, Endpoints } from './types';
-import getProduct from './api/getProduct';
+import * as api from './api';
 
 import { ApolloClient, InMemoryCache, HttpLink } from "apollo-boost";
 import { setContext } from "apollo-link-context";
@@ -11,6 +11,7 @@ function onCreate(settings: Setttings) {
     uri: "https://api.helice.cloud/dev/graphql",
     fetch: fetch
   });
+
   const authLink = setContext((_, { headers }) => {
     // return the headers to the context so HTTP link can read them
     return {
@@ -33,9 +34,7 @@ function onCreate(settings: Setttings) {
 
 const { createApiClient } = apiClientFactory<Setttings, Endpoints>({
   onCreate,
-  api: {
-    getProduct
-  }
+  api
 });
 
 export {

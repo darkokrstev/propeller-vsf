@@ -9,6 +9,8 @@ import {
   AgnosticFacet
 } from '@vue-storefront/core';
 import type { Facet, FacetSearchCriteria } from '@vue-storefront/propelvsf-api';
+import { getProductFiltered } from './productGetters';
+// import { useProduct } from './'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getAll(params: FacetSearchResult<Facet>, criteria?: FacetSearchCriteria): AgnosticFacet[] {
@@ -39,28 +41,43 @@ function getCategoryTree(params: FacetSearchResult<Facet>): AgnosticCategoryTree
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getProducts(params: FacetSearchResult<Facet>): any {
-  return [
-    {
-      _id: 1,
-      _description: 'Some description',
-      _categoriesRef: [
-        '1',
-        '2'
-      ],
-      name: 'Black jacket',
-      sku: 'black-jacket',
-      images: [
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
-      ],
-      price: {
-        original: 12.34,
-        current: 10.00
-      }
-    }
-  ];
+const getProducts = (searchData) => {
+  // TODO: implement filters
+  console.log('000000000000000000009999');
+  console.log(searchData.data)
+  return getProductFiltered(searchData.data);
 }
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// async function getProducts(params: FacetSearchResult<Facet>): any {
+//   console.log('PROPELLER getProducts facade', params);
+  
+  
+//   let prods = await getProductFiltered(params);
+
+//   console.log('PROPELLER getProducts filtered in facade', prods);
+
+//   return [
+//     {
+//       _id: 1,
+//       _description: 'Jeroen',
+//       _categoriesRef: [
+//         '1',
+//         '2'
+//       ],
+//       name: 'Jans',
+//       sku: 'black-jacket',
+//       images: [
+//         'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
+//       ],
+//       price: {
+//         original: 12.34,
+//         current: 10.00
+//       }
+//     }
+//   ];
+// }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getPagination(params: FacetSearchResult<Facet>): AgnosticPagination {

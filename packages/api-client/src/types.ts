@@ -26,29 +26,6 @@ export type PasswordResetResult = TODO;
 
 export type Product = TODO;
 
-// export type Product = {
-//     id: number;
-//     name: string;
-//     description: string;
-//     shortDescription: string;
-//     sku: string;
-//     categoryId: number;
-//     path: string;
-//     shortName: string;
-//     manufacturerCode: string;
-//     eanCode: string;
-//     manufacturer: string;
-//     supplier: string;
-//     supplierCode: string;
-//     tag: string;
-//     images: any;
-//     originalPrice: number;
-//     costPrice: number;
-//     suggestedPrice: number;
-//     storePrice: number;
-//     minimumQuantity: number;
-// };
-
 export type ProductFilter = TODO;
 
 export type Review = TODO;

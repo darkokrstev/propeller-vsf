@@ -13,13 +13,11 @@ const params: UseProductFactoryParams<Product, SearchParams> = {
   productsSearch: async (context: Context, params) => {
     console.log('Mocked by Propeller: useProduct.productsSearch');
 
-    const data = await context.$propelvsf.api.getProduct(params);
+    const productData = await context.$propelvsf.api.getProduct(params);
 
     console.log('composable params', params);
-    console.log('composable data', data);
-    return { 
-      data
-    };
+    console.log('composable data', productData);
+    return productData;
   }
 };
 
